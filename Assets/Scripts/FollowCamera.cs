@@ -12,6 +12,7 @@ public class FollowCamera : MonoBehaviour
     private Vector2 minXAndY;
     public Transform player;
     	
+    // Awake method
 	void Awake ()
     {
         player = GameObject.Find("Player").transform;
@@ -61,5 +62,4 @@ public class FollowCamera : MonoBehaviour
 
         transform.position = new Vector3(targetX, targetY, transform.position.z);
 	}
-
 }
