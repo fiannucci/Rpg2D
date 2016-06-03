@@ -7,12 +7,13 @@ public class NavigationPrompt : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        showDialog = true;
+        if (NavigationManager.CanNavigate(this.tag))
+            showDialog = true;
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-        if(NavigationManager.CanNavigate(this.tag))
+        
             showDialog = false;
     }
 
