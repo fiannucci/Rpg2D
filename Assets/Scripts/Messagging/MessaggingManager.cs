@@ -11,6 +11,7 @@ public class MessaggingManager : MonoBehaviour
     }
 
     private List<Action> subscribers = new List<Action>();
+    private List<Action<bool>> UiEventSubscribers = new List<Action<bool>>();
 
 	void Awake ()
     {
@@ -22,6 +23,28 @@ public class MessaggingManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 	}
 
+    public void SubscribeUIEvent(Action<bool> subscriber)
+    {
+        UiEventSubscribers.Add(subscriber);
+    }
+
+    public void UnSubscriveUIEvent(Action<bool> subscriber)
+    {
+        UiEventSubscribers.Remove(subscriber);
+    }
+
+    public void ClearAllUIEventSubscribers()
+    {
+        UiEventSubscribers.Clear();
+    }
+
+    public void BroadcastUIEvent(bool uiVisible)
+    {
+        foreach(var subscriber in UiEventSubscribers.ToArray())
+        {
+            subscriber(uiVisible);
+        }
+    }
     public void Subscribe(Action subscriber)
     {
         Debug.Log("Subscriber registered");

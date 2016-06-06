@@ -8,7 +8,9 @@ public static class NavigationManager
     public static Dictionary<string, Route> RouteInformation = new Dictionary<string, Route>()
     {
         {"World",new Route {RouteDescription = "The big bad world", CanTravel = true } },
-        {"Cave", new Route {RouteDescription = "The deep dark cave", CanTravel = false } }
+        {"Cave", new Route {RouteDescription = "The deep dark cave", CanTravel = false } },
+        {"Home", new Route {RouteDescription = "Home sweet home", CanTravel = true } },
+        {"Kirkidw", new Route {RouteDescription = "The grand city of Kirkidw", CanTravel = true } },
     };
 
     public struct Route

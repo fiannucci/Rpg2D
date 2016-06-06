@@ -5,18 +5,29 @@ public class NavigationPrompt : MonoBehaviour
 {
     bool showDialog;
 
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (NavigationManager.CanNavigate(this.tag))
-            showDialog = true;
+            DialogVisible(true);
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-        
-            showDialog = false;
+        DialogVisible(false);
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (NavigationManager.CanNavigate(this.tag))
+            DialogVisible(true);
+    }
+
+    void DialogVisible(bool visibility)
+    {
+        showDialog = visibility;
+        MessaggingManager.Instance.BroadcastUIEvent(visibility);
+    }
     void OnGUI()
     {
         if (showDialog)
@@ -27,12 +38,12 @@ public class NavigationPrompt : MonoBehaviour
 
             if (GUI.Button(new Rect(55, 100, 180, 40), "Travel"))
             {
-                showDialog = false;
+                DialogVisible(false);
                 NavigationManager.NavigateTo(this.tag);                
             }
             if (GUI.Button(new Rect(55, 150, 180, 40), "Stay"))
             {
-                showDialog = false;
+                DialogVisible(false);
             }
             GUI.EndGroup();
         }
