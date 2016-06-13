@@ -16,4 +16,4 @@ MonoBehaviour:
   ItemName: Level 0 Sword
   Cost: 0
   Strength: 5
-  Defense: 0
+  Defense: 5
