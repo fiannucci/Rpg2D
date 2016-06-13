@@ -10,6 +10,7 @@ public class MapMovement : MonoBehaviour {
     bool inputActive = true;
     bool inputReady = true;
     bool startedTravelling = false;
+    bool battleStarted = false;
     private Collider2D playerCollider;
     
     private int EncounterChance = 100;
@@ -79,11 +80,12 @@ public class MapMovement : MonoBehaviour {
             startedTravelling = false;
         }
 
-        if (EncounterDistance > 0)
+        if (EncounterDistance > 0 && !battleStarted)
         {
             if(Vector3.Distance(StartLocation,transform.position) > EncounterDistance)
             {
                 TargetLocation = Vector3.zero;
+                battleStarted = true;
                 NavigationManager.NavigateTo("Battle");
             }
         }

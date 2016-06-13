@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public static class GameState
 {
-    public static Player currentPlayer; //DA VERIFICARE CON MARCO QUANDO SARA UTILIZZATO
+    public static Player currentPlayer = new Player(); //ScriptableObject.CreateInstance<Player>();
     public static bool PlayerReturningHome;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();
 

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 
 
 public static class NavigationManager
@@ -11,8 +13,10 @@ public static class NavigationManager
         {"Cave", new Route {RouteDescription = "The deep dark cave", CanTravel = false } },
         {"Home", new Route {RouteDescription = "Home sweet home", CanTravel = true } },
         {"Kirkidw", new Route {RouteDescription = "The grand city of Kirkidw", CanTravel = true } },
+        {"Shop", new Route { CanTravel = true } },
     };
 
+    private static string PreviousLocation;
     public struct Route
     {
         public string RouteDescription;
@@ -31,8 +35,16 @@ public static class NavigationManager
 
     public static void NavigateTo(string destination)
     {
+        PreviousLocation = SceneManager.GetActiveScene().name;
         if (destination == "Home")
-            GameState.PlayerReturningHome = false;
-        FadeInOutManager.FadeToLevel(destination, 0.5f, 0.5f, Color.black);
+        GameState.PlayerReturningHome = false;
+        TransitionManager.Instance.LoadScene(destination);
+    }
+
+    public static void GoBack()
+    {
+        string backLocation = PreviousLocation;
+        PreviousLocation= SceneManager.GetActiveScene().name;
+        TransitionManager.Instance.LoadScene(backLocation);            
     }
 }

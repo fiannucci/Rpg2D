@@ -9,6 +9,7 @@ TagManager:
   - Cave
   - Home
   - Kirkidw
+  - Shop
   layers:
   - Default
   - TransparentFX
