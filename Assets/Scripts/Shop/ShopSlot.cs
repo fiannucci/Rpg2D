@@ -5,6 +5,7 @@ public class ShopSlot : MonoBehaviour
 {
     public InventoryItem Item;
     public ShopManager Manager;
+    
 
     public void AddShopItem(InventoryItem item)
     {
@@ -14,9 +15,9 @@ public class ShopSlot : MonoBehaviour
         Item = item;
     }
 	
+    
     public void PurchaseItem()
-    {
-       
+    {       
         GameState.currentPlayer.AddInventoryItem(Item); 
         Item = null;
         var spriteRenderer = GetComponent<SpriteRenderer>();

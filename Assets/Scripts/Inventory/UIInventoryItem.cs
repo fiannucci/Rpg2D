@@ -9,16 +9,9 @@ public class UIInventoryItem : MonoBehaviour
     [SerializeField]
     private Text _itemDescription;
 
-    public void ShowItem(InventoryItem item)
+    public void SetupItem(InventoryItem item)
     {
         _itemImage.sprite = item.Sprite;
         _itemDescription.text = item.ItemName;
-        gameObject.SetActive(true);
-    }
-	
-    public void HideItem()
-    {
-        gameObject.SetActive(false);
-    }
-	
+    }	
 }

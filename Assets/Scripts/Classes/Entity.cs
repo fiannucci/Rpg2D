@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public  class Entity : MonoBehaviour
+public  class Entity : ScriptableObject
 {
     public string Name;
     public int Age;

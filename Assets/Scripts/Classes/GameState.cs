@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public static class GameState
 {
-    public static Player currentPlayer = new Player(); //ScriptableObject.CreateInstance<Player>();
+    public static Player currentPlayer = ScriptableObject.CreateInstance<Player>();
     public static bool PlayerReturningHome;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();
-
+        
     public static Vector3 GetLastScenePosition(string sceneName)
     {
         if (GameState.LastScenePositions.ContainsKey(sceneName))

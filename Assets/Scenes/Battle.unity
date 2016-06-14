@@ -532,6 +532,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1316227881}
   - 114: {fileID: 1316227880}
+  - 95: {fileID: 1316227882}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -590,6 +591,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!95 &1316227882
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1316227879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fb33e4a8730e1e43a9dcc0b0f74db59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1431160602
 GameObject:
   m_ObjectHideFlags: 0
