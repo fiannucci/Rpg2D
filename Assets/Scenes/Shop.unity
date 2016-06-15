@@ -303,6 +303,7 @@ MonoBehaviour:
   - {fileID: 1750268900}
   ShopItems:
   - {fileID: 11400000, guid: b9a4048d00babd242bc87d8bb157f710, type: 2}
+  - {fileID: 11400000, guid: 40a04c2d05584e340b1378347fb5f846, type: 2}
 --- !u!212 &723680316
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,28 @@ public class BattleManager : MonoBehaviour
 
     private InventoryItem selectedWeapon;
 
+    private string selectedTargetName;
+    private EnemyController selectedTarget;
+    public GameObject selectionCircle;
+    private bool canSelectEnemy = true;
+
+    bool attacking = false;
+
+    public bool CanSelectEnemy
+    {
+        get
+        {
+            return canSelectEnemy;
+        }
+    }
+
+    public int EnemyCount
+    {
+        get
+        {
+            return enemyCount;
+        }
+    }
     public enum BattleState
     {
         Begin_Battle,
@@ -26,6 +48,23 @@ public class BattleManager : MonoBehaviour
         Enemy_Attack,
         Battle_Result,
         Battle_End
+    }
+
+    public void SelectEnemy(EnemyController enemy, string name)
+    {
+        selectedTarget = enemy;
+        selectedTargetName = name;
+    }
+
+    public void ClearSelectedEnemy()
+    {
+        if(selectedTarget != null)
+        {
+            var enemyController = selectedTarget.GetComponent<EnemyController>();
+            enemyController.ClearSelection();
+            selectedTarget = null;
+            selectedTargetName = string.Empty;
+        }
     }
 
     private void InventoryItemSelect(InventoryItem item)
@@ -89,6 +128,15 @@ public class BattleManager : MonoBehaviour
             yield return StartCoroutine(MoveCharachterToPoint(EnemySpawnPoints[i], newEnemy));
 
             newEnemy.transform.parent = EnemySpawnPoints[i].transform;
+
+            var controller = newEnemy.GetComponent<EnemyController>();
+            controller.BattleManager = this;
+            var EnemyProfile = ScriptableObject.CreateInstance<Enemy>();
+            EnemyProfile.Level = 1;
+            EnemyProfile.Damage = 1;
+            EnemyProfile.Health = 2;
+            EnemyProfile.Name = "Goblin " + (i+1).ToString();
+            controller.EnemyProfile = EnemyProfile;
         }
         battleStateManager.SetBool("BattleReady", true);
     }
@@ -132,6 +180,19 @@ public class BattleManager : MonoBehaviour
                 if(selectedWeapon == null)
                 {
                     GUI.Box(new Rect((Screen.width / 2) - 50, 10, 100, 50), "Select Weapon");
+                }
+                else if(selectedTarget == null)
+                {
+                    GUI.Box(new Rect((Screen.width / 2) - 50, 10, 100, 50), "Select Target");
+                }
+                else
+                {
+                    if(GUI.Button(new Rect((Screen.width / 2) - 50, 10, 100, 50), "Attack " + selectedTargetName))
+                    {
+                        canSelectEnemy = false;
+                        battleStateManager.SetBool("PlayerReady", true);
+                        MessaggingManager.Instance.BroadcastUIEvent(true);
+                    }
                 }
                 break;
             case BattleState.Player_Attack:

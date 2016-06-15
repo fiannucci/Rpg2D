@@ -579,6 +579,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  selectionCircle: {fileID: 175776, guid: 11b0bb31fff0bc147b247d3af34cd8c1, type: 2}
 --- !u!4 &1316227881
 Transform:
   m_ObjectHideFlags: 0
@@ -628,8 +629,8 @@ MonoBehaviour:
   anchor: 1
   anchorOffset: {x: 1, y: -0.1}
   anchorPoint: 8
-  DefaultButtonImage: {fileID: 21300004, guid: e89418e1ea2d05945b36d314dbe8f5ab, type: 3}
-  SelectedButtonImage: {fileID: 21300004, guid: e89418e1ea2d05945b36d314dbe8f5ab,
+  DefaultButtonImage: {fileID: 21300000, guid: e89418e1ea2d05945b36d314dbe8f5ab, type: 3}
+  SelectedButtonImage: {fileID: 21300002, guid: e89418e1ea2d05945b36d314dbe8f5ab,
     type: 3}
 --- !u!1 &1431160602
 GameObject:

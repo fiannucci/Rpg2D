@@ -11,7 +11,7 @@ public class ShopSlot : MonoBehaviour
     {
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = item.Sprite;
-        spriteRenderer.transform.localScale = item.Scale;
+        spriteRenderer.transform.localScale = item.Scale;       
         Item = item;
     }
 	

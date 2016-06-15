@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 416718}
   - 212: {fileID: 21205506}
   - 95: {fileID: 9541482}
+  - 114: {fileID: 11489690}
+  - 61: {fileID: 6140758}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -30,6 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6140758
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186180}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.81, y: 1.03}
 --- !u!95 &9541482
 Animator:
   serializedVersion: 3
@@ -47,6 +63,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11489690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2235229106c4d5d46a4286e58c4c7840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyProfile: {fileID: 0}
 --- !u!212 &21205506
 SpriteRenderer:
   m_ObjectHideFlags: 1
