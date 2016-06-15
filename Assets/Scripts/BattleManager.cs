@@ -14,6 +14,8 @@ public class BattleManager : MonoBehaviour
 
     private int enemyCount;
 
+    private InventoryItem selectedWeapon;
+
     public enum BattleState
     {
         Begin_Battle,
@@ -26,6 +28,11 @@ public class BattleManager : MonoBehaviour
         Battle_End
     }
 
+    private void InventoryItemSelect(InventoryItem item)
+    {
+        selectedWeapon = item;
+    }
+
     void GetAnimationStates()
     {
         foreach(BattleState state in (BattleState[])System.Enum.GetValues(typeof(BattleState)))
@@ -36,13 +43,17 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        MessaggingManager.Instance.SubscribeInventoryEvent(InventoryItemSelect);
         battleStateManager = GetComponent<Animator>();
         GetAnimationStates();
         enemyCount = Random.Range(1, EnemySpawnPoints.Length);
-        StartCoroutine(SpawnEnemies());
-        
+        StartCoroutine(SpawnEnemies());        
     }
 
+    void OnDestroy()
+    {
+        MessaggingManager.Instance.UnSubscribeInventoryEvent(InventoryItemSelect);
+    }
     void Update()
     {
         currentBattleState = battleStateHash[battleStateManager.GetCurrentAnimatorStateInfo(0).nameHash]; // da rivedere
@@ -117,6 +128,10 @@ public class BattleManager : MonoBehaviour
                 {
                     GameState.PlayerReturningHome = true;
                     NavigationManager.NavigateTo("World");
+                }
+                if(selectedWeapon == null)
+                {
+                    GUI.Box(new Rect((Screen.width / 2) - 50, 10, 100, 50), "Select Weapon");
                 }
                 break;
             case BattleState.Player_Attack:

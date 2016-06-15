@@ -14,13 +14,24 @@ public class CommandBar : MonoBehaviour
 
     public bool anchor = true;
     public Vector2 anchorOffset = Vector2.zero;
-    public ScreenPositionAnchorPoint anchorPoint = ScreenPositionAnchorPoint.BottomCenter; 
-
+    public ScreenPositionAnchorPoint anchorPoint = ScreenPositionAnchorPoint.BottomCenter;
+    
     public Sprite DefaultButtonImage;
     public Sprite SelectedButtonImage;
 
     private float ScreenHeight;
     private float ScreenWidth;
+
+    private bool canSelectButton = true;
+    private CommandButton selectedButton;
+
+    public bool CanSelectButton
+    {
+        get
+        {
+            return canSelectButton;
+        }
+    }
 
     public int Layer
     {
@@ -68,6 +79,12 @@ public class CommandBar : MonoBehaviour
     void Start()
     {
         InitCommandButtons();
+        MessaggingManager.Instance.SubscribeUIEvent(SetCanSelectButton);
+    }
+
+    void OnDestroy()
+    {
+        MessaggingManager.Instance.UnSubscriveUIEvent(SetCanSelectButton);
     }
 
     void Update()
@@ -184,5 +201,28 @@ public class CommandBar : MonoBehaviour
                 break;
         }
         return anchorOffset + position;
+    }
+
+    public void ResetSelection(CommandButton button)
+    {
+        if (selectedButton != null)
+            selectedButton.ClearSelection();
+        button = selectedButton;
+    }
+
+    public void SelectButton(CommandButton button)
+    {
+        if(selectedButton != null)
+            selectedButton.ClearSelection();
+        selectedButton = button;
+        if (selectedButton != null)
+            MessaggingManager.Instance.BroadcastInventoryEvent(selectedButton.Item);
+        else
+            MessaggingManager.Instance.BroadcastInventoryEvent(null);
+    }
+
+    void SetCanSelectButton(bool state)
+    {
+        canSelectButton = !state;
     }
 }

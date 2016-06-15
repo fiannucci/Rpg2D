@@ -34,5 +34,27 @@ public class CommandButton : MonoBehaviour
         renderer.transform.parent = this.transform;
         renderer.transform.localScale *= 4;
     }
+
+    void UpdateSelection()
+    {
+        var renderer = gameObject.GetComponent<SpriteRenderer>();
+        renderer.sprite = selected ? commandBar.SelectedButtonImage : commandBar.DefaultButtonImage;
+    }
+
+    public void ClearSelection()
+    {
+        selected = false;
+        UpdateSelection();
+    }
+
+    void OnMouseDown()
+    {
+        if (commandBar.CanSelectButton)
+        {
+            selected = !selected;
+            UpdateSelection();
+            commandBar.SelectButton(selected ? this : null);
+        }
+    }
 }
 

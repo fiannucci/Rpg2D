@@ -12,6 +12,7 @@ public class MessaggingManager : MonoBehaviour
 
     private List<Action> subscribers = new List<Action>();
     private List<Action<bool>> UiEventSubscribers = new List<Action<bool>>();
+    private List<Action<InventoryItem>> inventorySubscribers = new List<Action<InventoryItem>>();
 
 	void Awake ()
     {
@@ -22,6 +23,32 @@ public class MessaggingManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 	}
+
+    public void SubscribeInventoryEvent(Action<InventoryItem> subscriber)
+    {
+        if (inventorySubscribers != null)
+            inventorySubscribers.Add(subscriber);
+    }
+
+    public void UnSubscribeInventoryEvent(Action<InventoryItem> subscriber)
+    {
+        if (inventorySubscribers != null)
+            inventorySubscribers.Remove(subscriber);
+    }
+
+    public void ClearAllInventoryEventSubscribers()
+    {
+        if (inventorySubscribers != null)
+            inventorySubscribers.Clear();
+    }
+
+    public void BroadcastInventoryEvent(InventoryItem itemInUse)
+    {
+        foreach(var subscriber in inventorySubscribers)
+        {
+            subscriber(itemInUse);
+        }
+    }
 
     public void SubscribeUIEvent(Action<bool> subscriber)
     {

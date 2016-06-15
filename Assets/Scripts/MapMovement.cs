@@ -38,7 +38,8 @@ public class MapMovement : MonoBehaviour {
 
     void OnDestroy()
     {
-        GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, transform.position);
+        GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, transform.position);    
+        MessaggingManager.Instance.UnSubscriveUIEvent(UpdateInputAction);        
     }
 
 	void Update ()
