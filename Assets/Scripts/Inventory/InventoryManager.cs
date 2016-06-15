@@ -36,9 +36,11 @@ public class InventoryManager : Singleton<InventoryManager>
     public void ShowInventory()
     {
         PopulateInventory();
-
-        if(_inventoryItemRootParent.childCount > 0)
+        if (!_inventoryIsActive)
             _inventoryItemRootParent.gameObject.SetActive(true);
+        else
+            HideInventory();                    
+        _inventoryIsActive = !_inventoryIsActive;
     }
 
     public void HideInventory()
