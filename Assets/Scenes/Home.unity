@@ -1391,7 +1391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1140068261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   Defense: 0
   Speed: 1
   Damage: 1
-  Armor: 0
+  Armour: 0
   NoOfAttack: 1
   Weapon: 
   Position: {x: 0, y: 0}
@@ -1870,7 +1870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1434132881
 RectTransform:
   m_ObjectHideFlags: 0

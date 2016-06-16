@@ -12,6 +12,7 @@ public class MessaggingClientReceiver : MonoBehaviour {
     {
         MessaggingManager.Instance.UnSubscribe(ThePlayerIsTryingToLeave);
     }
+    
     void ThePlayerIsTryingToLeave()
     {
         var dialog = GetComponent<ConversationComponent>();

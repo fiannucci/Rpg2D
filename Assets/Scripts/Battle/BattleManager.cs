@@ -80,6 +80,23 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    IEnumerator AttackTarget()
+    {
+        int Attacks = 0;
+        attacking = true;
+        bool attackComplete = false;
+
+        while (!attackComplete)
+        {
+            GameState.currentPlayer.Attack(selectedTarget.EnemyProfile);
+            selectedTarget.UpdateAI();
+            Attacks++;
+            if (selectedTarget.EnemyProfile.Health < 1 || Attacks > GameState.currentPlayer.NoOfAttack)
+                attackComplete = true;
+            yield return new WaitForSeconds(1);
+        }
+    }
+
     void Start()
     {
         MessaggingManager.Instance.SubscribeInventoryEvent(InventoryItemSelect);
@@ -104,6 +121,8 @@ public class BattleManager : MonoBehaviour
             case BattleState.Player_Move:
                 break;
             case BattleState.Player_Attack:
+                if (!attacking)
+                    StartCoroutine(AttackTarget());
                 break;
             case BattleState.Change_Control:
                 break;

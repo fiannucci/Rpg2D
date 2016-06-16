@@ -562,7 +562,7 @@ MonoBehaviour:
   - {fileID: 1880710321}
   - {fileID: 1095889602}
   EnemyPrefabs:
-  - {fileID: 186180, guid: cbf9e89d022fdfc43a1d725d46ef1d78, type: 2}
+  - {fileID: 192536, guid: 64f4f4f3429be844cb6b8f5f86acfe1a, type: 2}
   SpawnAnimationCurve:
     serializedVersion: 2
     m_Curve:

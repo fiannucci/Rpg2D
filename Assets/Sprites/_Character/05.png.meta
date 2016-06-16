@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9c8c544472285984b80d0909089bfa00
-timeCreated: 1465288083
+timeCreated: 1466072721
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,26 +63,26 @@ TextureImporter:
         y: 1037
         width: 79
         height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -26.5, y: 51}
-        - {x: -38.5, y: 28}
-        - {x: -35.5, y: 4}
-        - {x: -29.5, y: -18}
-        - {x: -23.5, y: -24}
-        - {x: -22.5, y: -24}
-        - {x: -25.5, y: -25}
-        - {x: -31.5, y: -17}
-        - {x: -38.5, y: -13}
-        - {x: -39.5, y: -15}
-        - {x: -39.5, y: -44}
-        - {x: -17.5, y: -51}
-        - {x: 9.5, y: -51}
-        - {x: 39.5, y: -31}
-        - {x: 39.5, y: 34}
-        - {x: 24.5, y: 51}
+      - - {x: -26.5, y: 102}
+        - {x: -38.5, y: 79}
+        - {x: -35.5, y: 55}
+        - {x: -29.5, y: 33}
+        - {x: -23.5, y: 27}
+        - {x: -22.5, y: 27}
+        - {x: -25.5, y: 26}
+        - {x: -31.5, y: 34}
+        - {x: -38.5, y: 38}
+        - {x: -39.5, y: 36}
+        - {x: -39.5, y: 7}
+        - {x: -17.5, y: 0}
+        - {x: 9.5, y: 0}
+        - {x: 39.5, y: 20}
+        - {x: 39.5, y: 85}
+        - {x: 24.5, y: 102}
     - name: 05_1
       rect:
         serializedVersion: 2
@@ -90,16 +90,16 @@ TextureImporter:
         y: 779
         width: 88
         height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -44, y: 53}
-        - {x: -44, y: -32}
-        - {x: -24, y: -53}
-        - {x: 44, y: -53}
-        - {x: 44, y: 40}
-        - {x: 36, y: 53}
+      - - {x: -44, y: 106}
+        - {x: -44, y: 21}
+        - {x: -24, y: 0}
+        - {x: 44, y: 0}
+        - {x: 44, y: 93}
+        - {x: 36, y: 106}
     - name: 05_2
       rect:
         serializedVersion: 2
@@ -107,20 +107,20 @@ TextureImporter:
         y: 512
         width: 85
         height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 21.5, y: 49}
-        - {x: 14.5, y: 50}
-        - {x: -32.5, y: 50}
-        - {x: -42.5, y: 34}
-        - {x: -42.5, y: -34}
-        - {x: -35.5, y: -50}
-        - {x: -9.5, y: -50}
-        - {x: 42.5, y: -45}
-        - {x: 42.5, y: 7}
-        - {x: 37.5, y: 35}
+      - - {x: 21.5, y: 99}
+        - {x: 14.5, y: 100}
+        - {x: -32.5, y: 100}
+        - {x: -42.5, y: 84}
+        - {x: -42.5, y: 16}
+        - {x: -35.5, y: 0}
+        - {x: -9.5, y: 0}
+        - {x: 42.5, y: 5}
+        - {x: 42.5, y: 57}
+        - {x: 37.5, y: 85}
     - name: 05_3
       rect:
         serializedVersion: 2
@@ -128,20 +128,20 @@ TextureImporter:
         y: 384
         width: 81
         height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 24.5, y: 49.5}
-        - {x: -15.5, y: 49.5}
-        - {x: -28.5, y: 48.5}
-        - {x: -40.5, y: 38.5}
-        - {x: -40.5, y: -5.5}
-        - {x: -20.5, y: -49.5}
-        - {x: 21.5, y: -49.5}
-        - {x: 40.5, y: -29.5}
-        - {x: 40.5, y: 11.5}
-        - {x: 37.5, y: 38.5}
+      - - {x: 24.5, y: 99}
+        - {x: -15.5, y: 99}
+        - {x: -28.5, y: 98}
+        - {x: -40.5, y: 88}
+        - {x: -40.5, y: 44}
+        - {x: -20.5, y: 0}
+        - {x: 21.5, y: 0}
+        - {x: 40.5, y: 20}
+        - {x: 40.5, y: 61}
+        - {x: 37.5, y: 88}
     - name: 05_4
       rect:
         serializedVersion: 2
@@ -149,17 +149,17 @@ TextureImporter:
         y: 261
         width: 89
         height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 12.5, y: 47.5}
-        - {x: -44.5, y: 47.5}
-        - {x: -44.5, y: -47.5}
-        - {x: 37.5, y: -47.5}
-        - {x: 44.5, y: -39.5}
-        - {x: 44.5, y: -18.5}
-        - {x: 37.5, y: 35.5}
+      - - {x: 12.5, y: 95}
+        - {x: -44.5, y: 95}
+        - {x: -44.5, y: 0}
+        - {x: 37.5, y: 0}
+        - {x: 44.5, y: 8}
+        - {x: 44.5, y: 29}
+        - {x: 37.5, y: 83}
     - name: 05_5
       rect:
         serializedVersion: 2
@@ -167,19 +167,19 @@ TextureImporter:
         y: 0
         width: 81
         height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 16.5, y: 51.5}
-        - {x: -26.5, y: 51.5}
-        - {x: -40.5, y: 35.5}
-        - {x: -40.5, y: -3.5}
-        - {x: -26.5, y: -51.5}
-        - {x: 24.5, y: -51.5}
-        - {x: 40.5, y: -28.5}
-        - {x: 40.5, y: 6.5}
-        - {x: 37.5, y: 35.5}
+      - - {x: 16.5, y: 103}
+        - {x: -26.5, y: 103}
+        - {x: -40.5, y: 87}
+        - {x: -40.5, y: 48}
+        - {x: -26.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 40.5, y: 23}
+        - {x: 40.5, y: 58}
+        - {x: 37.5, y: 87}
     outline: []
   spritePackingTag: 
   userData: 

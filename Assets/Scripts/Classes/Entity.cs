@@ -14,8 +14,18 @@ public  class Entity : ScriptableObject
     public int Defense = 0;
     public int Speed = 1;
     public int Damage = 1;
-    public int Armor = 0;
+    public int Armour = 0;
     public int NoOfAttack = 1;
     public string Weapon;
     public Vector2 Position;
+
+    public void TakeDamage(int amount)
+    {
+        Health -= Mathf.Clamp(amount - Armour, 0 , int.MaxValue);
+    }
+
+    public void Attack(Entity entity)
+    {
+        entity.TakeDamage(Strenght);
+    }
 }

@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     private BattleManager battleManager;
     public Enemy EnemyProfile;
     Animator enemyAI;
+    private ParticleSystem bloodSplatterParticles;
 
     private bool selected;
     GameObject selectionCircle;
@@ -43,7 +44,7 @@ public class EnemyController : MonoBehaviour
             {
                 selectionCircle = GameObject.Instantiate(battleManager.selectionCircle) as GameObject;
                 selectionCircle.transform.parent = transform;
-                selectionCircle.transform.localPosition = new Vector3(0, -0.5f, 0); ;
+                selectionCircle.transform.localPosition = new Vector3(0, 0, 0); ;
                 StartCoroutine("SpinObject",selectionCircle);
                 battleManager.SelectEnemy(this, EnemyProfile.Name);
             }
@@ -73,8 +74,18 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void Awake()
+    void ShowBloodSplatter()
     {
+        bloodSplatterParticles.Play();
+        ClearSelection();
+        if (battleManager != null)
+            battleManager.ClearSelectedEnemy();        
+    }
+
+    void Start()
+    {
+        bloodSplatterParticles = GetComponentInChildren<ParticleSystem>();
+        
         enemyAI = GetComponent<Animator>();
         if (enemyAI == null)
             Debug.LogWarning("No AI System found");
